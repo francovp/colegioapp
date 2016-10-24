@@ -26,7 +26,7 @@
 ?>
     <div class="masthead clearfix">
 	    <div class="inner">
-		    <h3> <a href="index.php" class="masthead-brand"><strong>Colegio App</strong></a></h3>
+		    <h3> <a href="index.php" class="masthead-brand"><strong>Colegio App Visitante</strong></a></h3>
 		    <nav>
 		    <ul class="nav masthead-nav">
                 <li><a href="iniciarSesion.php">Iniciar Sesión</a></li>

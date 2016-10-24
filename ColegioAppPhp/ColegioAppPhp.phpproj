@@ -19,8 +19,10 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="infoColegio.php" />
     <Compile Include="conexion.php" />
     <Compile Include="database.php" />
+    <Compile Include="colegio.php" />
     <Compile Include="prueba.php" />
     <Compile Include="curso.php" />
     <Compile Include="registrarAdmin.php" />
@@ -30,7 +32,6 @@
     <Compile Include="indexErrorCrearUsuario.php" />
     <Compile Include="indexErrorRegistro.php" />
     <Compile Include="login.php" />
-    <Compile Include="visitante.php" />
     <Compile Include="_Footer.php" />
     <Compile Include="_navPartial.php" />
     <Compile Include="_Layout.php" />
