@@ -49,8 +49,8 @@
 
 		//Se verifica que el usuario no haya sido registrado antes.
 		$query = "SELECT verificar_email ('".$email."');";
-		$result = pg_query($conexion,$query);
-		$ver = pg_fetch_row ($result);
+		$result = pg_query($conexion, $query);
+		$ver = pg_fetch_row($result);
 		//Si no se encuentra...
 		if ($ver[0] == 'f') {
 			//...Se procede a registrar al jugador...
