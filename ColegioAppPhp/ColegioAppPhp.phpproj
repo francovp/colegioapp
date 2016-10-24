@@ -20,11 +20,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="database.php" />
+    <Compile Include="registrarAdmin.php" />
+    <Compile Include="iniciarSesion.php" />
     <Compile Include="index.php" />
     <Compile Include="indexErrorLogin.php" />
     <Compile Include="indexErrorCrearUsuario.php" />
     <Compile Include="indexErrorRegistro.php" />
     <Compile Include="login.php" />
+    <Compile Include="_Footer.php" />
+    <Compile Include="_navPartial.php" />
     <Compile Include="_Layout.php" />
     <Compile Include="perfil.php" />
     <Compile Include="registro.php" />
