@@ -34,7 +34,7 @@
   ?>
 <!-- ----------------------------------------------------------------------------------------- -->
 <?php
-    include('_Layout.php'); 
+	include('_Layout.php'); 
 ?> 
 		  <div class="container-fluid">
 			
@@ -163,5 +163,5 @@
 			?>
 
 <?php
-    include('_Footer.php'); 
+	include('_Footer.php'); 
 ?> 
