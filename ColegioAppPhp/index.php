@@ -32,51 +32,19 @@
 ?>
 
 <!-- Botón para mostrar Listado de Colegios -->
-			<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#modalListadoColegios">
-			<strong>Ver Listado de Colegios</strong></button>
-			</h1>
+	<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#modalListadoColegios">
+	<strong>Ver Listado de Colegios</strong></button>
+	</h1>
 
-<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->            
-<!-- Modal Listado de Colegios-->
+<!-- Botón para mostrar Listado de Colegios -->
+	<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#modalInfoColegio">
+	<strong>Ver Información de un Colegio</strong></button>
+	</h1>
 
-			<div class="modal fade" id="modalListadoColegios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			  <div class="modal-dialog">
-				<div class="modal-content">
-	
-				  <div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Ver Colegios de un curso y prueba específico</h4>
-				  </div>
-	
-				  <div class="modal-body">
-					<?php
-	                    include_once("curso.php");
-  	                    $objcurso=new curso();
-  	                    $listacurso=$objcurso->consultarCursos();
-	                    if($listacurso){
-	                        echo "<label>Seleccione curso de Prueba Simce: </label><br><br>";
-                            echo "<select  class='form-control' id='curso' name='curso'>";
-                            echo "<option id=''>"."SELECCIONE"."</option>";
-	                        foreach($listacurso as $rowcurso){
-		                            echo "<option value='".$rowcurso[0]."' id='".$rowcurso[0]."'>".$rowcurso[1]."</option>";
-	                        }
-	                        echo "</select><br><br>";
-	                        }
-                    ?>
-                    <label>Seleccione año de Prueba Simce: </label><br><br>
-                    <select class="form-control" name="prueba" id="prueba">
-                        <option value="0">SELECCIONE</option>
-                    </select><br /><br />
-
-                    <div name="infoColegio" id="infoColegio">
-                    </div> <br /><br />
-				  </div>
-				  <div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-				  </div>
-				</div>
-			  </div>
-			</div>
+<?php
+    include('modalListadoColegios.php');
+    include('modalInfoColegio.php');
+?>
 
 <script language="javascript">
     $(document).ready(function () {
