@@ -1,5 +1,4 @@
 <?php
-    $sesionIniciada = false;
     if (!isset($_SESSION)){
         if (strlen(session_id()) < 1){
             $sesionIniciada = false;
@@ -7,6 +6,7 @@
             $sesionIniciada = true;
         }
     }
+    else $sesionIniciada = true;
 
     if($sesionIniciada){
 ?>
