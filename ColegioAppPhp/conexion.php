@@ -1,13 +1,7 @@
 <?php
 class conexion{
 	function conectar(){
-			$host = "localhost"; 
-			$port = "5432"; 
-			$data = "colegioapp"; 
-			$user = "postgres"; //usuario de postgres 
-			$pass = "8569"; //password de usuario de postgres 
-			$conn_string = "host=". $host . " port=" . $port . " dbname= " . $data . " user=" . $user . " password=" . $pass; 
-			$link = pg_connect($conn_string);
+			$link = new SQLite3("Database/colegioapp.sqlite");
 			$valor;
 			if($link){
 				$valor=$link;
@@ -19,19 +13,30 @@ class conexion{
 			return $valor;
 	}
 	function ejecutarCONSULTA($query,$con){
-	        $resultado=pg_query($con, $query);
-	        $valor;
-	        if($resultado){
-	            $lista =array();
-	            while($row=pg_fetch_array($resultado)){
-	                array_push($lista,$row);
-	            }
-	            $valor = $lista;
-	        }else{
-	            $valor = "No se ejecutó query a la database";
-	        }
-	        return $valor;
+			$resultado=$con->query($query);
+			$valor;
+			if($resultado){
+				$lista =array();
+				while ($row = $resultado->fetchArray()) {
+					array_push($lista,$row);
+				}
+				$valor = $lista;
+			}else{
+				$valor = "No se ejecutó query a la database";
+			}
+			return $valor;
 	}
 
+	function ejecutarQueryUnica($query,$con){
+			$resultado=$con->query($query);
+			$valor;
+			if($resultado){
+			   $row = $resultado->fetchArray();
+			   $valor = $row;
+			}else{
+				$valor = "No se ejecutó query a la database";
+			}
+			return $valor;
+	}
 }
 ?>

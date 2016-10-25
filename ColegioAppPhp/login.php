@@ -1,60 +1,48 @@
 <?php 
-    //error_reporting(-1);
-    //ini_set('display_errors', 'On');
-    require('database.php');
+	//error_reporting(-1);
+	//ini_set('display_errors', 'On');
 
 	$username = trim($_POST["username"]);
-	//$pass_oculta = crypt(trim($_POST["pass"]),$1$);
-	$pass_oculta = trim($_POST["pass"]);
+	//$pass = crypt(trim($_POST["pass"]),$1$);
+	$pass = trim($_POST["pass"]);
 
-	$debug = $_POST["debug"];
-							
-		$query = "SELECT verificar_usuario ('".$username."','".$pass_oculta."');";
-		$result = pg_query($conexion,$query);
-		$ver = pg_fetch_row ($result);
+	include_once("usuario.php");
+  	$objusuario=new usuario();
+  	$fila=$objusuario->getUsuario($username);
+    if ($fila['contraseña'] == $pass) {
+                  
+        //Debug
+        echo "<br>El usuario existe y su contraseña está correcta<br>";
+        echo "<br>Usuario: ".$fila['username']."<br>";
+        //
 
-		if ($ver[0] == 't') {
+        if (!isset($_SESSSION)) {
+            session_start();
+            session_regenerate_id(true);
+        }
 
-			//Debug
-				echo "<br>El usuario existe y su contraseña está correcta<br>";
-				echo "<br>ID usuario: ".$username."<br>";
-			//
+        $_SESSION["username"] = $fila['username'];
+        $_SESSION["nombre"] = $fila['nombre'];
+        $_SESSION["apellido"] = $fila['apellido'];
+        $_SESSION["sexo"] =$fila['sexo'];
+        $_SESSION["email"] = $fila['email'];
+        $_SESSION["pass"] = $fila['contraseña'];
 
-			//Obtener datos del jugador
-			$query = "SELECT * FROM usuario WHERE (username = '".$username."');";
-			$result = pg_query($conexion,$query);
-			$tupla = pg_fetch_row($result);
+        if(!$debug)
+        {
+            header ("Location: perfil.php");
+        }
+        //Debug
+        else{
 
-
-			pg_close($conexion);
-
-			if (!isset($_SESSSION)) {
-					session_start();
-					session_regenerate_id(true);
-			}
-
-				$_SESSION["username"] = $tupla[1];
-				$_SESSION["nombre"] = $tupla[2];
-				$_SESSION["apellido"] = $tupla[3];
-                $_SESSION["sexo"] =$tupla[4];
-				$_SESSION["email"] = $tupla[5];
-				$_SESSION["pass"] = $tupla[6];
-
-			if(!$debug)
-			{
-				header ("Location: perfil.php");
-			}
-			//Debug
-				else{
-
-					$username = $_SESSION["username"];
-					echo $username." Se ha logeado";
-				}
-			//
-		}
-		else {
-			if(!$debug){
-				header ("Location: indexErrorLogin.php");
-			}
-		}
+            $username = $_SESSION["username"];
+            echo $username." Se ha logeado";
+        }
+        //
+    }
+    else {
+        if(!$debug){
+            header ("Location: iniciarSesionError.php");
+        }
+    }
 ?>

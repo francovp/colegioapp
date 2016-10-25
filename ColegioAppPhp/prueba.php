@@ -6,7 +6,7 @@ $con=$obj->conectar();
 $html = '';
 $id_curso = $_POST['id_curso'];
 
-$queryprueba="SELECT * from prueba_simce where (curso='".$id_curso."');";
+$queryprueba="SELECT * from prueba_simce where (curso='$id_curso');";
 
 $listadoprueba=$obj->ejecutarCONSULTA($queryprueba, $con);
 echo "<option id=''>"."SELECCIONE"."</option>";

@@ -19,7 +19,13 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="dependencia.php" />
     <Compile Include="infoColegio.php" />
+    <Compile Include="modalInfoColegio.php" />
+    <Compile Include="modalListadoColegios.php" />
+    <Compile Include="mensualidad.php" />
+    <Compile Include="usuario.php" />
+    <Compile Include="listadoColegios.php" />
     <Compile Include="conexion.php" />
     <Compile Include="database.php" />
     <Compile Include="colegio.php" />
@@ -28,7 +34,7 @@
     <Compile Include="registrarAdmin.php" />
     <Compile Include="iniciarSesion.php" />
     <Compile Include="index.php" />
-    <Compile Include="indexErrorLogin.php" />
+    <Compile Include="iniciarSesionError.php" />
     <Compile Include="indexErrorCrearUsuario.php" />
     <Compile Include="indexErrorRegistro.php" />
     <Compile Include="login.php" />
@@ -44,7 +50,7 @@
     <Folder Include="Content\themes\base\" />
     <Folder Include="Content\themes\base\images\" />
     <Folder Include="fonts\" />
-    <Folder Include="funciones_sql\" />
+    <Folder Include="Database\" />
     <Folder Include="Properties\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
@@ -115,7 +121,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="funciones_sql\funciones.sql" />
+    <Content Include="Database\funciones.sql" />
     <Content Include="packages.config" />
     <Content Include="Web.config" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

@@ -156,8 +156,6 @@
 			  // Guardar datos extras de sesión actual
 			  $_SESSION["username"] = $username;
 
-			  //Cierra cualquier conexión abierta a la base de datos
-			  pg_close($conexion);
 			?>
 
 <?php
