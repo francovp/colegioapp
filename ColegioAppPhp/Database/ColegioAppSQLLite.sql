@@ -122,5 +122,17 @@ CREATE TABLE Usuario (
   PRIMARY KEY (id)
 );
 
+-- Table: ListaColegios
+DROP TABLE IF EXISTS ListaColegios;
+CREATE TABLE ListaColegios
+(
+  id integer PRIMARY KEY,
+  nombreColegio VARCHAR(255) NOT NULL,
+  nombreSostenedor VARCHAR(255) NOT NULL,
+  nombreDirector VARCHAR(255) NOT NULL,
+  mensualidad VARCHAR(255) NOT NULL,
+  dependencia VARCHAR(255) NOT NULL
+);
+
 COMMIT TRANSACTION;
 PRAGMA foreign_keys = on;

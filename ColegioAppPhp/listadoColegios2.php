@@ -25,6 +25,9 @@ echo "
 		";
 
     if($listadoprueba){		
+    	//Borrar ListaColegios
+    	$queryBorrarLista="DELETE FROM ListaColegios;";
+    	$obj->ejecutarQueryUnica($queryBorrarLista, $con);
         foreach($listadoprueba as $rowprueba){
             $valor = $rowprueba[0];
             $querycolegio="SELECT * from Colegio where (id='$valor');";
@@ -53,6 +56,10 @@ echo "
 		            echo "</tr>";
                 }
             }
+            //Rellenar ListaColegios
+            $queryInsertarLista="INSERT INTO ListaColegios (id, nombreColegio, nombreDirector, nombreSostenedor, mensualidad, dependencia)
+            VALUES (NULL,'$rowcolegio[1]','$rowcolegio[2]','$rowcolegio[3]','$mensualidad','$dependencia');";
+            $obj->ejecutarQueryUnica($queryInsertarLista, $con);
 	    }
         echo "</tbody></table>";
     }

@@ -14,8 +14,7 @@
 	<link rel="stylesheet" href="Content/bootstrap.min.css"> 
 
   <!-- Custom styles-->
-	<link href="Content/cover.css" rel="stylesheet">
-	<link href="Content/style.css"  rel="stylesheet" type="text/css" /> 
+	<link href="Content/style.css"  rel="stylesheet"> 
 
   <!-- Styles Jquery -->
 	<link href="Content/themes/base/core.css" rel="stylesheet" type="text/css">

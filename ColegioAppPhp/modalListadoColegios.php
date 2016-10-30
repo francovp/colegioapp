@@ -57,12 +57,13 @@
 
             $("#prueba option:selected").each(function () {
                 id_prueba = $(this).val();
-                $.post("listadoColegios.php", { id_prueba: id_prueba }, function (data) {
+                $.post("listadoColegios2.php", { id_prueba: id_prueba }, function (data) {
                     $("#listadoColegios").html(data);
                 });
 
             });
         })
+
     });
 </script>
 

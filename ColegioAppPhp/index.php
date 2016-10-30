@@ -1,6 +1,15 @@
 <?php
     include('_Layout.php');
+    include('modalListadoColegios.php');
+    include('modalInfoColegio.php');
 ?>
+
+<script src="Scripts/Chart.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"/>
+ 
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 
 <?php
 	//Se verifica Si está iniciada la sesión
@@ -33,18 +42,15 @@
 
 <!-- Botón para mostrar Listado de Colegios -->
 	<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#modalListadoColegios">
-	<strong>Ver Listado de Colegios</strong></button>
-	</h1>
+	<strong>Ver Listado de Colegios</strong></button><br><br>
 
 <!-- Botón para mostrar Listado de Colegios -->
 	<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#modalInfoColegio">
-	<strong>Ver Información de un Colegio</strong></button>
-	</h1>
-
-<?php
-    include('modalListadoColegios.php');
-    include('modalInfoColegio.php');
-?>
+	<strong>Ver Información de un Colegio</strong></button><br><br>
+	
+<!-- Botón para mostrar Gráfico -->
+	<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#modalGrafico">
+	<strong>Ver gráfico de colegios</strong></button><br><br>
 
 <script language="javascript">
     $(document).ready(function () {
